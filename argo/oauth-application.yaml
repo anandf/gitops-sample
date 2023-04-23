@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: oauth-application-sample
+spec:
+  destination:
+    server: https://kubernetes.default.svc 
+    namespace: oauth-test 
+  project: default
+  source: 
+    repoURL: https://github.com/anandf/gitops-sample.git
+    path: kustomize/oauth
+    targetRevision: main
+
